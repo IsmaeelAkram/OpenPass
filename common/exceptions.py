@@ -1,6 +1,2 @@
-class UserNotFound(Exception):
-    pass
-
-
-class AuthFailed(Exception):
+class UserNotFoundError(Exception):
     pass

@@ -1,5 +1,6 @@
 from flaskext.mysql import MySQL
 from hashlib import sha512
+from .exceptions import UserNotFoundError
 
 
 class User:
@@ -32,6 +33,8 @@ def get_user(mysql: MySQL, name: str):
     cursor = mysql.get_db().cursor()
     cursor.execute("SELECT * FROM users WHERE name=%s", name)
     user = cursor.fetchone()
+    if not user:
+        raise UserNotFoundError
     return User(user[0], user[1], user[2])
 
 

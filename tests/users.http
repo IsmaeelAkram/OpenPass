@@ -1,8 +1,8 @@
 GET http://localhost:5000/users HTTP/1.1
 ###
-GET http://localhost:5000/user/ismaeelakram HTTP/1.1
+GET http://localhost:5000/users/ismaeelakram HTTP/1.1
 ###
-POST http://localhost:5000/auth/ismaeelakram?password=fwf HTTP/1.1
+POST http://localhost:5000/auth HTTP/1.1
 content-type: application/json
 
-{"password": "coding123"}
+{"username": "ismaeelakram", "password": "password123"}
